@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mak Snodgrass Portfolio</title>
+    <style>
+      * {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        text-align: center;
+      }
+      .nav-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333; /* Dark background */
+        display: flex; /* Flexbox instead of floats */
+        justify-content: space-evenly; /* Evenly space items */
+        align-items: center; /* Center items vertically */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        overflow: hidden;
+      }
+
+      .nav-link {
+        color: white;
+        text-align: center;
+        padding: 14px 10em;
+        text-decoration: none;
+        display: block;
+      }
+
+      .nav-link:hover {
+        background-color: #ddd; /* Gray on hover */
+        color: black;
+      }
+
+      /* Responsive Styles (for smaller screens) */
+      @media screen and (max-width: 600px) {
+        .nav-item {
+          float: none;
+          display: block; /* Stack items vertically */
+        }
+      }
+      .action-button {
+        /* Default styles */
+        background-color: #008cba; /* blue */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        margin: 4px auto;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease; /* Smooth transitions */
+        justify-items: auto;
+      }
+      .action-button:hover {
+        background-color: #006080; /* Darker green on hover */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+      }
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 60%;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .carousel-container {
+        width: 500px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .carousel-slide {
+        display: none; /* Hide all slides initially */
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: auto;
+      }
+
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .dot-container {
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active,
+      .dot:hover {
+        background-color: #717171;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Hi! I am Makenzie (Mak) Snodgrass, a full-stack developer, and this is my
+      professional webpage.
+    </h1>
+
+    <ul class="nav-menu">
+      <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="#projects">Projects</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+
+    <p>
+      I am excited to have you browse through my portfolio of skills. Please
+      navigate through the munue at the top tp I have currently in a coding
+      bootcamp through Carnegie Mellon Univeristy's School of Computer Science.
+      In June of 2021, I graduated Suma Cum Laude from Kent State University
+      receiving a 3.965 GPA for my BBA in Economics with a minor in Finance. I
+      am avaialble for work as a software developer as I am looking forward to
+      provide a imapctful code to a challenging project. If you are considering
+      me for work, as an employee or contractor, feel free to contact me either
+      by
+      <a
+        href="mailto:mksnodgr@andrew.cmu.edu?subject=Inquiry%20for%20Employment%20from%20Portfolio%20Website"
+        >email</a
+      >
+      or use the built in <a href="#contact">contact form</a>!
+    </p>
+
+    <h2 id="projects">Projects</h2>
+
+    <button class="action-button" id="openModalProject1">
+      Tiny Web Search Project
+    </button>
+
+    <div id="myModal1" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Tiny Web Search Engine</h3>
+        <p>
+          This is a tiny web search engine. It uses a comand line interface to
+          grab a users query, a webcrawler or spider that indexes webpages, a
+          search algorithm that looks for query in the keywords within the
+          index, and a ranking algorithm that ranks the found pages based on
+          relvenace.
+        </p>
+        <br />
+        <div class="carousel-container">
+          <div class="carousel-slide fade">
+            <img src="CLI1.png" alt="Image 1" />
+          </div>
+
+          <div class="carousel-slide fade">
+            <img src="CLI2.png" alt="Image 2" />
+          </div>
+
+          <div class="carousel-slide fade">
+            <img src="Spider1.png" alt="Image 3" />
+          </div>
+
+          <div class="carousel-slide fade">
+            <img src="Spider2.png" alt="Image 4" />
+          </div>
+
+          <div class="carousel-slide fade">
+            <img src="SpiderTests.png" alt="Image 4" />
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <button
+      data-title="Project 2"
+      data-text="Placeholder"
+      class="action-button"
+      id="openModalProject2"
+    >
+      Open Project 2
+    </button>
+
+    <div id="myModal2" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Header Placeholder</h2>
+        <p>Text Placeholder</p>
+      </div>
+    </div>
+
+    <br />
+
+    <button
+      data-title="Project 3"
+      data-text="Placeholder"
+      class="action-button"
+      id="openModalProject3"
+    >
+      Open Project 3
+    </button>
+
+    <br />
+
+    <button
+      data-title="Project 4"
+      data-text="Placeholder"
+      class="action-button"
+      id="openModalProject4"
+    >
+      Open Project 4
+    </button>
+
+    <h2 id="skills">Skills</h2>
+    <p></p>
+    <h2 id="contact">Contact</h2>
+    <p></p>
+
+    <script>
+      // Get the modal
+      const modal1 = document.getElementById("myModal1");
+      const modal2 = document.getElementById("myModal2");
+
+      // Get the button that opens the modal
+      const btn1 = document.getElementById("openModalProject1");
+      const btn2 = document.getElementById("openModalProject2");
+      const btn3 = document.getElementById("openModalProject3");
+      const btn4 = document.getElementById("openModalProject4");
+
+      // Get the <span> element that closes the modal
+      const closeButtons = document.getElementsByClassName("close");
+
+      // Functions to open modals
+      btn1.onclick = function () {
+        modal1.style.display = "block";
+      };
+
+      function openModal(event) {
+        modal2.style.display = "block";
+        modal2.querySelector("h2").innerText = event.target.dataset.title;
+        modal2.querySelector("p").innerText = event.target.dataset.text;
+      }
+
+      btn2.onclick = openModal;
+      btn3.onclick = openModal;
+      btn4.onclick = openModal;
+
+      // Functions to close modals when clicking the "x"
+      closeButtons[0].onclick = function () {
+        modal1.style.display = "none";
+      };
+      closeButtons[1].onclick = function () {
+        modal2.style.display = "none";
+      };
+
+      // Close modals when clicking outside of them
+      window.onclick = function (event) {
+        if (event.target == modal1) {
+          modal1.style.display = "none";
+        }
+        if (event.target == modal2) {
+          modal2.style.display = "none";
+        }
+        if (event.target == modal3) {
+          modal3.style.display = "none";
+        }
+        if (event.target == modal4) {
+          modal4.style.display = "none";
+        }
+      };
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("carousel-slide");
+        const dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+  </body>
+</html>
