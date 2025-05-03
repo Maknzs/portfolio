@@ -2,159 +2,9 @@
 <html>
   <head>
     <title>Mak Snodgrass Portfolio</title>
-    <style>
-      * {
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        text-align: center;
-      }
-      .nav-menu {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        background-color: #333; /* Dark background */
-        display: flex; /* Flexbox instead of floats */
-        justify-content: space-evenly; /* Evenly space items */
-        align-items: center; /* Center items vertically */
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
-        overflow: hidden;
-      }
-
-      .nav-link {
-        color: white;
-        text-align: center;
-        padding: 14px 10em;
-        text-decoration: none;
-        display: block;
-      }
-
-      .nav-link:hover {
-        background-color: #ddd; /* Gray on hover */
-        color: black;
-      }
-
-      /* Responsive Styles (for smaller screens) */
-      @media screen and (max-width: 600px) {
-        .nav-item {
-          float: none;
-          display: block; /* Stack items vertically */
-        }
-      }
-      .action-button {
-        /* Default styles */
-        background-color: #008cba; /* blue */
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-        font-size: 16px;
-        margin: 4px auto;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: all 0.3s ease; /* Smooth transitions */
-        justify-items: auto;
-      }
-      .action-button:hover {
-        background-color: #006080; /* Darker green on hover */
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-      }
-      .modal {
-        display: none; /* Hidden by default */
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4);
-      }
-
-      .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 60%;
-      }
-
-      .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      }
-      .carousel-container {
-        width: 500px;
-        margin: 0 auto;
-        position: relative;
-      }
-
-      .carousel-slide {
-        display: none; /* Hide all slides initially */
-      }
-
-      .carousel-slide img {
-        width: 100%;
-        height: auto;
-      }
-
-      .prev,
-      .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        margin-top: -22px;
-        padding: 16px;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-      }
-
-      .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-      }
-
-      .prev:hover,
-      .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-
-      .dot-container {
-        text-align: center;
-        padding: 20px 0;
-      }
-
-      .dot {
-        cursor: pointer;
-        height: 15px;
-        width: 15px;
-        margin: 0 2px;
-        background-color: #bbb;
-        border-radius: 50%;
-        display: inline-block;
-        transition: background-color 0.6s ease;
-      }
-
-      .active,
-      .dot:hover {
-        background-color: #717171;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <h1>
       Hi! I am Makenzie (Mak) Snodgrass, a full-stack developer, and this is my
@@ -171,23 +21,23 @@
     </ul>
 
     <p>
-      I am excited to have you browse through my portfolio of skills. Please
-      navigate through the munue at the top tp I have currently in a coding
-      bootcamp through Carnegie Mellon Univeristy's School of Computer Science.
-      In June of 2021, I graduated Suma Cum Laude from Kent State University
-      receiving a 3.965 GPA for my BBA in Economics with a minor in Finance. I
-      am avaialble for work as a software developer as I am looking forward to
-      provide a imapctful code to a challenging project. If you are considering
-      me for work, as an employee or contractor, feel free to contact me either
-      by
+      I’m excited to have you browse through my portfolio of skills. Please
+      navigate using the menu at the top. I’m currently enrolled in a coding
+      bootcamp through Carnegie Mellon University’s School of Computer Science.
+      In June 2021, I graduated <em>Summa Cum Laude</em> from Kent State
+      University with a <em>3.965 GPA</em>, earning a BBA in Economics and a
+      minor in Finance. I am available for work as a software developer and am
+      eager to contribute impactful code to challenging projects. If you are
+      considering me for a role—either as an employee or a contractor—feel free
+      to contact me via
       <a
         href="mailto:mksnodgr@andrew.cmu.edu?subject=Inquiry%20for%20Employment%20from%20Portfolio%20Website"
         >email</a
       >
-      or use the built in <a href="#contact">contact form</a>!
+      or by using the built-in <a href="#contact">contact form</a>!
     </p>
 
-    <h2 id="projects">Projects</h2>
+    <h2 id="projects">Showcased Projects</h2>
 
     <button class="action-button" id="openModalProject1">
       Tiny Web Search Project
@@ -198,7 +48,7 @@
         <span class="close">&times;</span>
         <h3>Tiny Web Search Engine</h3>
         <p>
-          This is a tiny web search engine. It uses a comand line interface to
+          This is a tiny web search engine. It uses a command line interface to
           grab a users query, a webcrawler or spider that indexes webpages, a
           search algorithm that looks for query in the keywords within the
           index, and a ranking algorithm that ranks the found pages based on
@@ -240,8 +90,6 @@
       </div>
     </div>
 
-    <br />
-
     <button
       data-title="Project 2"
       data-text="Placeholder"
@@ -259,8 +107,6 @@
       </div>
     </div>
 
-    <br />
-
     <button
       data-title="Project 3"
       data-text="Placeholder"
@@ -269,8 +115,6 @@
     >
       Open Project 3
     </button>
-
-    <br />
 
     <button
       data-title="Project 4"
@@ -281,93 +125,148 @@
       Open Project 4
     </button>
 
+    <h2 id="timeline">Project Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-entry">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Tiny Web Search Engine</h3>
+          <span class="duration">Mar 2025 – Apr 2025</span>
+          <p>
+            A command-line web search engine with web crawling, indexing,
+            search, and ranking features.
+          </p>
+          <button class="action-button" id="openModalProject1">
+            View Details
+          </button>
+          <a
+            class="action-button"
+            href="https://github.com/maknzs/tinyWeb"
+            target="_blank"
+            >View Project on GitHub</a
+          >
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Dino Game Clone</h3>
+          <span class="duration">Apr 2024 – May 2024</span>
+          <p>
+            An interactive browser game inspired by Chrome’s Dino Game, built
+            with JavaScript and Canvas API.
+          </p>
+          <button class="action-button" id="openModalProject3">
+            View Details
+          </button>
+          <a
+            class="action-button"
+            href="https://github.com/maknzs/dino_game/"
+            target="_blank"
+            >View Project on GitHub</a
+          >
+          <a
+            class="action-button"
+            href="https://maknzs.github.io/dino_game/"
+            target="_blank"
+            >Play Game!</a
+          >
+        </div>
+      </div>
+
+      <!-- Add more entries as needed -->
+    </div>
+
     <h2 id="skills">Skills</h2>
-    <p></p>
+    <div class="tab">
+      <button class="tablinks active" onclick="openTab(event, 'Tab 1')">
+        Python
+      </button>
+
+      <button class="tablinks" onclick="openTab(event, 'Tab 2')">
+        JavaScript
+      </button>
+
+      <button class="tablinks" onclick="openTab(event, 'Tab 3')">HTML</button>
+
+      <button class="tablinks" onclick="openTab(event, 'Tab 4')">
+        Frameworks
+      </button>
+
+      <button class="tablinks" onclick="openTab(event, 'Tab 5')">Tools</button>
+    </div>
+
+    <div id="Tab 1" class="tabcontent" style="display: block">
+      <h3>Python</h3>
+      <p>
+        Expert understanding of Python programming basics. Expierence with
+        visualizing datasets, utilizing APIs, and basic graphics display.
+      </p>
+      <div class="progress-container">
+        80%
+        <div class="progress-bar" id="bar1" style="width: 80%"></div>
+      </div>
+    </div>
+
+    <div id="Tab 2" class="tabcontent">
+      <h3>JavaScript</h3>
+      <p>
+        Intermediate understanding of JavaScript programming. Expierence with
+        web search algorithms, web crawler, and the classic
+        <a href="https://maknzs.github.io/dino_game/">Dino Game!</a>
+      </p>
+      <div class="progress-container">
+        70%
+        <div class="progress-bar" id="bar2" style="width: 70%"></div>
+      </div>
+    </div>
+
+    <div id="Tab 3" class="tabcontent">
+      <h3>HTML</h3>
+      <p>
+        Basic understanding of Python programming. Expierence withvisualizing
+        datasets, utilizing APIs, and basic display
+      </p>
+      <div class="progress-container">
+        60%
+        <div class="progress-bar" id="bar3" style="width: 60%"></div>
+      </div>
+    </div>
+
+    <div id="Tab 4" class="tabcontent">
+      <h3>Frameworks</h3>
+      <p>Placeholder</p>
+      <div class="progress-container">
+        1%
+        <div class="progress-bar" id="bar4" style="width: 1%"></div>
+      </div>
+    </div>
+
+    <div id="Tab 5" class="tabcontent">
+      <h3>Tools</h3>
+      <p>Placeholder</p>
+      <div class="progress-container">
+        1%
+        <div class="progress-bar" id="bar5" style="width: 1%"></div>
+      </div>
+    </div>
+
     <h2 id="contact">Contact</h2>
-    <p></p>
+    <form id="contactForm">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" /><br /><br />
 
-    <script>
-      // Get the modal
-      const modal1 = document.getElementById("myModal1");
-      const modal2 = document.getElementById("myModal2");
+      <label for="email">Email:</label><br />
+      <input type="text" id="email" name="email" /><br /><br />
 
-      // Get the button that opens the modal
-      const btn1 = document.getElementById("openModalProject1");
-      const btn2 = document.getElementById("openModalProject2");
-      const btn3 = document.getElementById("openModalProject3");
-      const btn4 = document.getElementById("openModalProject4");
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="5"></textarea><br /><br />
 
-      // Get the <span> element that closes the modal
-      const closeButtons = document.getElementsByClassName("close");
+      <button type="submit" class="action-button">Submit</button>
+      <p id="formFeedback"></p>
+    </form>
 
-      // Functions to open modals
-      btn1.onclick = function () {
-        modal1.style.display = "block";
-      };
-
-      function openModal(event) {
-        modal2.style.display = "block";
-        modal2.querySelector("h2").innerText = event.target.dataset.title;
-        modal2.querySelector("p").innerText = event.target.dataset.text;
-      }
-
-      btn2.onclick = openModal;
-      btn3.onclick = openModal;
-      btn4.onclick = openModal;
-
-      // Functions to close modals when clicking the "x"
-      closeButtons[0].onclick = function () {
-        modal1.style.display = "none";
-      };
-      closeButtons[1].onclick = function () {
-        modal2.style.display = "none";
-      };
-
-      // Close modals when clicking outside of them
-      window.onclick = function (event) {
-        if (event.target == modal1) {
-          modal1.style.display = "none";
-        }
-        if (event.target == modal2) {
-          modal2.style.display = "none";
-        }
-        if (event.target == modal3) {
-          modal3.style.display = "none";
-        }
-        if (event.target == modal4) {
-          modal4.style.display = "none";
-        }
-      };
-      let slideIndex = 1;
-      showSlides(slideIndex);
-
-      function plusSlides(n) {
-        showSlides((slideIndex += n));
-      }
-
-      function currentSlide(n) {
-        showSlides((slideIndex = n));
-      }
-
-      function showSlides(n) {
-        let i;
-        const slides = document.getElementsByClassName("carousel-slide");
-        const dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
